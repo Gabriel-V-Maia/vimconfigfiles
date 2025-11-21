@@ -171,6 +171,26 @@ vim.lsp.config("clangd", { capabilities = capabilities, filetypes = { "c", "cpp"
 
 vim.lsp.enable({ "pyright", "lua_ls", "html", "cssls", "ts_ls", "jdtls", "clangd" })
 
+
+-- ========================
+-- Wayland Clipboard
+-- ========================
+
+vim.opt.clipboard = "unnamedplus"
+
+vim.g.clipboard = {
+  name = "wl-clipboard",
+  copy = {
+    ["+"] = "wl-copy",
+    ["*"] = "wl-copy",
+  },
+  paste = {
+    ["+"] = "wl-paste",
+    ["*"] = "wl-paste",
+  },
+  cache_enabled = 1,
+}
+
 -- ========================
 -- Colorscheme
 -- ========================
